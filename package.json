@@ -1,0 +1,15 @@
+{
+  "name": "recon.dev-sub-extract",
+  "version": "1.0.0",
+  "description": "Grab subdomains from api.recon.dev",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jasmin Landry @JR0ch17",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "is-valid-domain": "0.0.14"
+  }
+}
