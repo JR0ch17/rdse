@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.19.2",
+    "has-flag": "^4.0.0",
     "is-valid-domain": "0.0.14"
   }
 }

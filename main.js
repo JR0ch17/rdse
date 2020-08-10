@@ -1,5 +1,6 @@
 const axios = require('axios');
 const isValidDomain = require('is-valid-domain')
+const hasFlag = require('has-flag');
 
 let domain = process.argv[2];
 let subdomains = [];
@@ -12,7 +13,13 @@ if (isValidDomain(domain)) {
         subdomains.push(subdomain.domain);
       });
       subdomains = [...new Set(subdomains)];
-      console.log(subdomains.sort());
+      if (hasFlag('text')) {
+        subdomains.forEach(subdomain => {
+          console.log(subdomain)
+        })
+      } else {
+        console.log(subdomains.sort());
+      }
     })
     .catch(function (error) {
       console.log(`Could not grab subdomains: ${error}`);
