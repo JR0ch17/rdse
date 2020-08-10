@@ -12,13 +12,13 @@ if (isValidDomain(domain)) {
         subdomain.domain = subdomain.domain.replace('https://', '').split(':')[0];
         subdomains.push(subdomain.domain);
       });
-      subdomains = [...new Set(subdomains)];
+      subdomains = [...new Set(subdomains.sort())];
       if (hasFlag('text')) {
         subdomains.forEach(subdomain => {
           console.log(subdomain)
         })
       } else {
-        console.log(subdomains.sort());
+        console.log(subdomains);
       }
     })
     .catch(function (error) {
