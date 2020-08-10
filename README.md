@@ -1,6 +1,6 @@
 # api.recon.dev Subdomain Extractor
 
-A simple Node.js script that extracts subdomains for a specified domain from https://api.recon.dev API by @nahamsec & @Static-Flow.
+A simple Node.js script that extracts subdomains for a specified domain from https://api.recon.dev API by [@nahamsec](https://twitter.com/NahamSec) & [@Static-Flow](https://twitter.com/_StaticFlow_).
 
 ## How to use
 
