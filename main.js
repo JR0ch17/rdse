@@ -6,6 +6,12 @@ let domain = process.argv[2];
 let subdomains = [];
 
 if (isValidDomain(domain)) {
+  subdomainRecon();
+} else {
+  console.log("Incorrect domain name syntax");
+}
+
+function subdomainRecon() {
   axios.get(`https://api.recon.dev/search?domain=${domain}`)
     .then(function (response) {
       response.data.map(subdomain => {
@@ -26,6 +32,4 @@ if (isValidDomain(domain)) {
     })
     .finally(function () {
     });
-} else {
-  console.log("Incorrect domain name syntax")
-}
+  };
