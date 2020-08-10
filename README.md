@@ -29,3 +29,6 @@ Currently the output is only in an array as it best suites my needs to integrate
   'www.github.com'
 ]
 ```
+
+## Contributions
+Always looking for contributions. If anyone wants to add output to text as well as maybe using yargs for options, help me out!
