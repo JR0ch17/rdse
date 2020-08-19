@@ -13,7 +13,7 @@ function validation() {
     console.error("Missing API Key");
   } else if (!isValidDomain(domain)) {
       console.error("Incorrect domain name syntax");
-    } else {
+  } else {
       subdomainRecon();
     }
 };
@@ -36,7 +36,7 @@ function subdomainRecon() {
       }
     })
     .catch(function (error) {
-      console.error(`Could not grab subdomains: ${error}`);
+      console.error(`Could not fetch subdomains: ${error}`);
     })
     .finally(function () {
     });
