@@ -3,6 +3,7 @@ const isValidDomain = require('is-valid-domain')
 const hasFlag = require('has-flag');
 
 let domain = process.argv[2];
+const key = process.env.API_RECON_DEV;
 let subdomains = [];
 
 if (isValidDomain(domain)) {
@@ -12,11 +13,12 @@ if (isValidDomain(domain)) {
 }
 
 function subdomainRecon() {
-  axios.get(`https://api.recon.dev/search?domain=${domain}`)
+  axios.get(`https://recon.dev/api/search?key=${key}&domain=${domain}`)
     .then(function (response) {
-      response.data.map(subdomain => {
-        subdomain.domain = subdomain.domain.replace('https://', '').split(':')[0];
-        subdomains.push(subdomain.domain);
+      response.data.map(data => {
+        data.rawDomains.forEach(subdomain => {
+          subdomains.push(subdomain);
+        });
       });
       subdomains = [...new Set(subdomains.sort())];
       if (hasFlag('text')) {
@@ -24,7 +26,7 @@ function subdomainRecon() {
           console.log(subdomain)
         })
       } else {
-        console.log(subdomains);
+        console.dir(subdomains, { 'maxArrayLength': null });
       }
     })
     .catch(function (error) {
