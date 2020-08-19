@@ -6,11 +6,17 @@ let domain = process.argv[2];
 const key = process.env.API_RECON_DEV;
 let subdomains = [];
 
-if (isValidDomain(domain)) {
-  subdomainRecon();
-} else {
-  console.log("Incorrect domain name syntax");
-}
+validation();
+
+function validation() {
+  if (!process.env.API_RECON_DEV) {
+    console.error("Missing API Key");
+  } else if (!isValidDomain(domain)) {
+      console.error("Incorrect domain name syntax");
+    } else {
+      subdomainRecon();
+    }
+};
 
 function subdomainRecon() {
   axios.get(`https://recon.dev/api/search?key=${key}&domain=${domain}`)
@@ -30,7 +36,7 @@ function subdomainRecon() {
       }
     })
     .catch(function (error) {
-      console.log(`Could not grab subdomains: ${error}`);
+      console.error(`Could not grab subdomains: ${error}`);
     })
     .finally(function () {
     });
