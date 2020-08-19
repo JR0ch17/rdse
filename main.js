@@ -6,16 +6,19 @@ let domain = process.argv[2];
 const key = process.env.API_RECON_DEV;
 let subdomains = [];
 
-validation();
-
-function validation() {
+if (validation(domain)) {
+  subdomainRecon(domain)
+}
+function validation(domain) {
   if (!process.env.API_RECON_DEV) {
     console.error("Missing API Key");
-  } else if (!isValidDomain(domain)) {
-      console.error("Incorrect domain name syntax");
-  } else {
-      subdomainRecon();
-    }
+    return false
+  }
+  if (!isValidDomain(domain, key)) {
+    console.error("Incorrect domain name syntax");
+    return false
+  }
+  return true
 };
 
 function subdomainRecon() {
