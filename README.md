@@ -1,17 +1,19 @@
-# Api.Recon.Dev Subdomain Extractor
+# Recon.Dev Subdomain Enum
 
 A simple Node.js script that extracts subdomains for a specified domain from https://recon.dev API by [@nahamsec](https://twitter.com/NahamSec) & [@Static-Flow](https://twitter.com/_StaticFlow_). You will need to get an API key, you can get one here https://recon.dev/login?screen_hint=signup.
 
 ## Install
-```
+```bash
 export API_RECON_DEV=<API-KEY>
-npm install
+git clone https://github.com/JR0ch17/rdse.git
+cd rdse/
+npm install -g .
 ```
 
 ## How to use
 #### Output result in an array
 ```
-node main.js github.com
+rdse github.com
 ```
 
 #### Output
@@ -33,7 +35,7 @@ node main.js github.com
 ```
 #### Output result as text
 ```
-node main.js github.com --text
+rdse github.com --text
 ```
 #### Output
 ```
