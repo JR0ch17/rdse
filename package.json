@@ -1,13 +1,16 @@
 {
-  "name": "recon.dev-sub-extract",
-  "version": "1.0.0",
+  "name": "ardse",
+  "version": "1.0.1",
   "description": "Grab subdomains from api.recon.dev",
-  "main": "main.js",
+  "main": "./index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Jasmin Landry @JR0ch17",
   "license": "ISC",
+  "bin": {
+    "ardse": "./index.js"
+  },
   "dependencies": {
     "axios": "^0.19.2",
     "has-flag": "^4.0.0",
