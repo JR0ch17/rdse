@@ -1,5 +1,5 @@
 {
-  "name": "ardse",
+  "name": "rdse",
   "version": "1.0.1",
   "description": "Grab subdomains from api.recon.dev",
   "main": "./main.js",
@@ -9,7 +9,7 @@
   "author": "Jasmin Landry @JR0ch17",
   "license": "ISC",
   "bin": {
-    "ardse": "./main.js"
+    "rdse": "./main.js"
   },
   "dependencies": {
     "axios": "^0.19.2",
