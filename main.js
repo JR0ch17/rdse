@@ -1,5 +1,6 @@
+#! /usr/bin/env node
 const axios = require('axios');
-const isValidDomain = require('is-valid-domain')
+const isValidDomain = require('is-valid-domain');
 const hasFlag = require('has-flag');
 
 let domain = process.argv[2];
