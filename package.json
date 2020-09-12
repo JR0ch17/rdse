@@ -2,14 +2,14 @@
   "name": "ardse",
   "version": "1.0.1",
   "description": "Grab subdomains from api.recon.dev",
-  "main": "./index.js",
+  "main": "./main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Jasmin Landry @JR0ch17",
   "license": "ISC",
   "bin": {
-    "ardse": "./index.js"
+    "ardse": "./main.js"
   },
   "dependencies": {
     "axios": "^0.19.2",
